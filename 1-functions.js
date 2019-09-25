@@ -5,6 +5,10 @@
 */
 function reverseNumber(num) {
   // Your code goes here ...
+  const str = String(num)
+  return str.split('')
+            .reverse()
+            .join('')
 }
 
 console.log(reverseNumber(32243)); // => 34223
@@ -16,6 +20,13 @@ console.log(reverseNumber(32243)); // => 34223
 */
 function alphabetOrder(str) {
   // Your code goes here ...
+  const arr = str.split('')
+  arr.sort((a , b) => {
+    if (a < b) { return -1 }
+    if (a > b) { return 1 }    
+    return 0
+  })
+  return arr.join('')
 }
 
 console.log(alphabetOrder('webmaster')); // => "abeemrstw"
@@ -27,6 +38,14 @@ console.log(alphabetOrder('webmaster')); // => "abeemrstw"
 */
 function findLongestWord(sentence) {
   // Your code goes here ...
+  const arr = sentence.split(' ');
+  return arr.reduce((acc, cur) => {
+    if (cur.length > acc.length) {
+      acc = cur
+    }
+
+    return acc
+  }, '')
 }
 
 console.log(findLongestWord('Web Development Tutorial')); // => "Development"
@@ -38,6 +57,11 @@ console.log(findLongestWord('Web Development Tutorial')); // => "Development"
 */
 function uniqueChars(str) {
   // Your code goes here ...
+  const set = new Set();
+  str.split('').forEach((char) => {set.add(char) })
+  const res = []
+  set.forEach((e) => res.push(e))
+  return res.join('')
 }
 
 console.log(uniqueChars('thequickbrownfoxjumpsoverthelazydog')); // => "thequickbrownfxjmpsvlazydg"
@@ -49,8 +73,12 @@ console.log(uniqueChars('thequickbrownfoxjumpsoverthelazydog')); // => "thequick
 */
 function addStudent(fn) {
   // Your code goes here ...
+ return fn()
 }
 
+function onAddStudent() {
+ return "Student has been added"
+}
 console.log(addStudent(onAddStudent)) // => "Student has been added"
 
 /*
@@ -65,4 +93,12 @@ console.log(addStudent(onAddStudent)) // => "Student has been added"
 */
 function getContext() {
   // Your code goes here ...
+  user = {
+    name: 'John',
+    age: 27
+  };
+
+  return this.user
 }
+
+console.log(getContext())

@@ -10,6 +10,7 @@
 */
 function getObjectKeys(obj) {
   // Your code goes here ...
+  return Object.keys(obj).join(',')
 }
 
 console.log(getObjectKeys({ name: 'David Ravy', sclass: 'VI', rollno: 12 })) // => "name,sclass,rollno"
@@ -26,6 +27,7 @@ console.log(getObjectKeys({ name: 'David Ravy', sclass: 'VI', rollno: 12 })) // 
 */
 function getObjectValues(obj) {
   // Your code goes here ...
+  return Object.values(obj)
 }
 
 console.log(getObjectValues({ date: '01/01/2020', place: 'Home', participants: ['Jake', 'Paul', 'Julia'] }));
